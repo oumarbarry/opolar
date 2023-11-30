@@ -1,0 +1,5 @@
+export const BadRequest = createError({ statusCode: 400, statusMessage: "Bad request" })
+export const NotPermitted = createError({ statusCode: 403, statusMessage: "Not permitted" })
+export const Unauthorized = createError({ statusCode: 401, statusMessage: "Unauthorized" })
+export const InternalServerError = createError({ statusCode: 500, statusMessage: "Internal Server Error" })
+export const ResourceNotFound = createError({ statusCode: 404, statusMessage: "Not found" })

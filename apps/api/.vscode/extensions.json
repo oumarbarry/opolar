@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "antfu.file-nesting",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "ZixuanChen.vitest-explorer"
+  ]
+}

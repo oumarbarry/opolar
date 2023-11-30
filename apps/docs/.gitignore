@@ -1,0 +1,7 @@
+node_modules
+dist
+cache
+*.log*
+.fleet
+.idea
+.DS_Store

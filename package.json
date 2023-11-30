@@ -1,0 +1,9 @@
+{
+  "name": "opolar",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {}
+}

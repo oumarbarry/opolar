@@ -1,0 +1,46 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis
+    ports:
+      - "${POLAR_REDIS_PORT}:${POLAR_REDIS_PORT}"
+
+  db:
+    image: postgres:15.1-bullseye
+    environment:
+      - POSTGRES_USER=${POLAR_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POLAR_POSTGRES_PWD}
+      - POSTGRES_DB=${POLAR_POSTGRES_DATABASE}
+      - POSTGRES_PORT=${POLAR_POSTGRES_PORT}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "${POLAR_POSTGRES_PORT}:${POLAR_POSTGRES_PORT}"
+    expose:
+      - ${POLAR_POSTGRES_PORT}
+    restart: always
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-q",
+          "-d",
+          "${POLAR_POSTGRES_DATABASE}",
+          "-U",
+          "${POLAR_POSTGRES_USER}",
+        ]
+      timeout: 40s
+      interval: 2s
+      retries: 20
+
+  ingress:
+    image: caddy:2.7
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    ports:
+      - "6380:6380"
+
+volumes:
+  postgres_data:

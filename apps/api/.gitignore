@@ -1,0 +1,21 @@
+# Nitro dev/build outputs
+.output
+.nitro
+.data
+.cache
+
+# Node dependencies
+node_modules
+
+# Logs
+*.log*
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example

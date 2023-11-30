@@ -1,0 +1,32 @@
+{
+  "name": "opolar-web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3000",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/image": "^1.1.0",
+    "@polar-sh/sdk": "^0.1.1",
+    "posthog-js": "^1.93.3",
+    "tailwindcss-radix": "^2.8.0",
+    "unist-util-visit": "^5.0.0",
+    "vue-email": "^0.8.0-beta.8"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.1.1",
+    "@nuxt/devtools": "^1.0.4",
+    "@nuxt/ui": "^2.11.0",
+    "@nuxtjs/storybook": "7.0.0",
+    "@types/node": "^18.18.14",
+    "@vueuse/nuxt": "^10.6.1",
+    "eslint": "^8.54.0",
+    "nuxt": "^3.8.2",
+    "typescript": "^5.3.2",
+    "vitest": "^0.34.6"
+  }
+}
